@@ -4,18 +4,26 @@ import requests
 import json
 import asyncio
 from datetime import datetime
+import os
+
+
+# Import tokens from private config file
+try:
+    from config import DISCORD_TOKEN, BALLCHASING_API_KEY
+except ImportError:
+    print("❌ Config file not found!")
+    print("Please create config.py with your tokens.")
+    print("See config_template.py for the format.")
+    exit()
+
 
 # Bot setup
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-# Configuration - Replace with your tokens
-DISCORD_TOKEN = 'MTQwOTIzMDY4NTU3MDQ2OTg5MQ.GWYA3y.Wq64j8uhucyEBjGg8S41P2efyCqEYmy5GLtbjI'
-BALLCHASING_API_KEY = 'ofFQrG5uTHxTSZalhV0oKfpOmJD0EtQ8EBOQOfEG'  # Get from ballchasing.com
 
 BALLCHASING_BASE_URL = 'https://ballchasing.com/api'
-
 
 @bot.event
 async def on_ready():
@@ -728,4 +736,6 @@ async def on_command_error(ctx, error):
 if __name__ == '__main__':
     print('Starting RL Stats Bot with Ballchasing.com API...')
     print('Note: Players need to upload replays to ballchasing.com first!')
+    if not DISCORD_TOKEN:
+        raise ValueError("DISCORD_TOKEN environment variable not set!")
     bot.run(DISCORD_TOKEN)
