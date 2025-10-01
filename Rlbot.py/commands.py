@@ -246,7 +246,7 @@ def setup_commands(bot):
             embed = discord.Embed(
                 title="🔍 How to Find Your Steam ID",
                 description="You need your Steam ID (not display name) to use this bot",
-                color=0xffa500
+                color=f15632
             )
             embed.add_field(
                 name="Method 1: steamidfinder.com",
