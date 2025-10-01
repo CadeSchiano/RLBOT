@@ -355,6 +355,7 @@ def setup_commands(bot):
             description="Enhanced version with detailed stats extraction",
             color=0x00ff88
         )
+        
         embed.add_field(
             name="🧪 Test Commands",
             value="`!hello` - Basic bot test\n`!ping` - Check latency\n`!test_api` - Test API connection",

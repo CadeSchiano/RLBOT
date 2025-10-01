@@ -1,6 +1,7 @@
 import requests
 from config import BALLCHASING_API_KEY
 
+
 BALLCHASING_BASE_URL = 'https://ballchasing.com/api'
 
 def get_detailed_replay(replay_id, headers):

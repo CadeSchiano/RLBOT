@@ -31,6 +31,7 @@ def setup_error_handlers(bot):
 
 setup_error_handlers(bot)
 
+
 if __name__ == '__main__':
     print('Starting RL Stats Bot with Ballchasing.com API...')
     print('Note: Players need to upload replays to ballchasing.com first!')
