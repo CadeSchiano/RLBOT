@@ -2,7 +2,7 @@
 import discord
 from discord.ext import commands
 from config import DISCORD_TOKEN
-from commands import setup_commands  # Remove the dot
+from commands import setup_commands
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -31,10 +31,9 @@ def setup_error_handlers(bot):
 
 setup_error_handlers(bot)
 
-
 if __name__ == '__main__':
-    print('Starting RL Stats Bot with Ballchasing.com API...')
-    print('Note: Players need to upload replays to ballchasing.com first!')
+    print('Starting RL Stats Bot with RapidAPI...')
+    print('Note: Get your RapidAPI key from rapidapi.com!')
     if not DISCORD_TOKEN:
         raise ValueError("DISCORD_TOKEN environment variable not set!")
     bot.run(DISCORD_TOKEN)
